@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
               </a>
             </div>
             <p className="text-[11px] text-slate-400">
-              Mon–Sun · 10:00 AM – 8:00 PM · Quick response on WhatsApp.
+              Mon–Sun · 8:00 AM – 11:30 PM · Quick response on WhatsApp.
             </p>
           </div>
 
@@ -140,8 +140,7 @@ const HomePage: React.FC = () => {
                 Gujarat (Home-based technician – home visit available)
               </p>
               <p>
-                <span className="text-slate-400">Timing:</span> Mon–Sun, 10:00
-                AM – 8:00 PM
+                <span className="text-slate-400">Timing:</span> Mon–Sun, 8:00AM – 11:30 PM
               </p>
             </div>
 
@@ -176,7 +175,7 @@ const HomePage: React.FC = () => {
                 SK Infotech – Laptop & Desktop Repair
               </p>
               < p className="text-xs text-slate-200 mb-1">
-                C/56, Pramukh Swami Tirth Soc., Behind Balaji Skyrise, Nr. Narayan Wadi, Atladara,
+                C/56, Pramukh Swami Tirth Soc., Behind Balaji Skyrise, Nr. Narayan Wadi,Atladara,
             Vadodara – 390012, Gujarat, India
                
               </p>
