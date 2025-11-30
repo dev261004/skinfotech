@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const phone = "+91 98XXXXXXXX"; // update
+  const phone = "+91 9904274783"; // update
   const navLinkBase =
     "text-sm font-medium hover:text-cyan-400 transition";
   const navLinkActive = "text-cyan-400";
