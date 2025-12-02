@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
                 1
               </span>
               <div>
-                <p className="font-semibold">Device Checkup (free inspection)</p>
+                <p className="font-semibold">Device Checkup </p>
                 <p className="text-slate-300">
                   We inspect your laptop/desktop/CCTV, listen to your problem,
                   and check the condition of the device.
