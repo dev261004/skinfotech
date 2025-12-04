@@ -16,41 +16,58 @@ const ServicesPage: React.FC = () => {
               networking and CCTV installation with professional support.
             </p>
           </div>
+
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-3 py-1 text-[11px] text-slate-300">
-            🏠 Onsite Home / Office Visit · 🏢 Shop Support
+            🏠 Home Visit Available · ⚙️ Genuine Parts · 🔧 Warranty on Repair
           </span>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        {/* Services grid (2 x 2 layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <ServiceCard
             title="Laptop & Desktop Repair"
             icon="💻"
             items={[
-              "Laptop repairing & desktop repairing",
               "Hardware & software diagnose & upgrade",
-              "Windows, drivers & software installation",
-              "System optimization & performance tuning",
+              "Windows installation & driver setup",
+              "Performance tuning & heating solution",
+              "Laptop screen & keyboard replacement",
             ]}
+            link="/laptop-repair"
           />
+
           <ServiceCard
             title="Networking & Peripherals"
             icon="🌐"
             items={[
-              "Networking setup & troubleshooting",
-              "Wi-Fi, LAN configuration & sharing",
+              "Wi-Fi & LAN configuration",
               "Printers & scanners setup & repair",
-              "Branded & assembled computers & peripherals",
+              "Network sharing, router replacement",
+              "Branded & assembled computer systems",
             ]}
           />
+
           <ServiceCard
             title="Security & Data"
             icon="🛡️"
             items={[
-              "Virus protection & system security",
+              "Virus removal & OS recovery",
               "Data backup & data recovery",
-              "CCTV cameras sales & installation",
-              "Remote viewing & DVR/NVR configuration",
+              "Security patch installation",
+              "System security & ransomware protection",
             ]}
+          />
+
+          <ServiceCard
+            title="CCTV Installation & Repair"
+            icon="📹"
+            items={[
+              "DVR / NVR setup & remote viewing",
+              "Indoor & outdoor camera installation",
+              "Cable management & wiring repair",
+              "Recording, storage & mobile live view setup",
+            ]}
+            link="/cctv-repair"
           />
         </div>
       </div>
