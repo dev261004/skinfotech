@@ -9,7 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import DesktopRepairPage from "./pages/DesktopRepairPage";
 import CctvRepairPage from "./pages/CctvRepairPage";
-
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 const App: React.FC = () => {
@@ -24,6 +24,7 @@ const App: React.FC = () => {
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   );
