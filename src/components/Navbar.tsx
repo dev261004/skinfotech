@@ -1,14 +1,39 @@
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // mobile menu
+  const [repairOpen, setRepairOpen] = useState(false); // desktop dropdown
   const navigate = useNavigate();
+  const location = useLocation();
+  const repairRef = useRef<HTMLDivElement | null>(null);
 
-  const phone = "+91 9904274783"; // update
+  const phone = "+91 9904274783";
   const navLinkBase =
     "text-sm font-medium hover:text-cyan-400 transition";
   const navLinkActive = "text-cyan-400";
+
+  // highlight Repair when any of its pages are active
+  const isRepairActive = [
+    "/laptop-repair",
+    "/desktop-repair",
+    "/cctv-repair",
+  ].includes(location.pathname);
+
+  // close Repair dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        repairRef.current &&
+        !repairRef.current.contains(event.target as Node)
+      ) {
+        setRepairOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-30 bg-slate-950/90 backdrop-blur border-b border-slate-800">
@@ -43,6 +68,7 @@ const Navbar: React.FC = () => {
           >
             Home
           </NavLink>
+
           <NavLink
             to="/services"
             className={({ isActive }) =>
@@ -51,14 +77,81 @@ const Navbar: React.FC = () => {
           >
             Services
           </NavLink>
-          <NavLink
-            to="/laptop-repair"
-            className={({ isActive }) =>
-              `${navLinkBase} ${isActive ? navLinkActive : ""}`
-            }
-          >
-            Laptop Repair
-          </NavLink>
+
+          {/* REPAIR DROPDOWN (DESKTOP) – CLICK TO OPEN/CLOSE */}
+          <div className="relative" ref={repairRef}>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation(); // so outside click handler doesn't instantly close it
+                setRepairOpen((prev) => !prev);
+              }}
+              className={`${navLinkBase} relative inline-flex items-center gap-1 pb-0.5 ${
+                isRepairActive ? navLinkActive : ""
+              }`}
+            >
+              Repair
+              <span
+                className={`text-[10px] transition-transform duration-200 ${
+                  repairOpen ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                ▾
+              </span>
+
+              {/* Underline shown when open or active */}
+              <span
+                className={`pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-cyan-400 origin-left transition-transform duration-200 ${
+                  repairOpen || isRepairActive ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
+            </button>
+
+            {repairOpen && (
+              <div className="absolute left-0 top-full mt-2 w-48 rounded-xl bg-slate-900 border border-slate-700 shadow-lg py-2 z-20">
+                <NavLink
+                  to="/laptop-repair"
+                  className={({ isActive }) =>
+                    `block px-3 py-1.5 text-sm ${
+                      isActive
+                        ? "text-cyan-400 bg-slate-800"
+                        : "text-slate-200 hover:bg-slate-800/60"
+                    }`
+                  }
+                  onClick={() => setRepairOpen(false)}
+                >
+                  Laptop Repair
+                </NavLink>
+                <NavLink
+                  to="/desktop-repair"
+                  className={({ isActive }) =>
+                    `block px-3 py-1.5 text-sm ${
+                      isActive
+                        ? "text-cyan-400 bg-slate-800"
+                        : "text-slate-200 hover:bg-slate-800/60"
+                    }`
+                  }
+                  onClick={() => setRepairOpen(false)}
+                >
+                  Desktop Repair
+                </NavLink>
+                <NavLink
+                  to="/cctv-repair"
+                  className={({ isActive }) =>
+                    `block px-3 py-1.5 text-sm ${
+                      isActive
+                        ? "text-cyan-400 bg-slate-800"
+                        : "text-slate-200 hover:bg-slate-800/60"
+                    }`
+                  }
+                  onClick={() => setRepairOpen(false)}
+                >
+                  CCTV Services
+                </NavLink>
+              </div>
+            )}
+          </div>
+
           <NavLink
             to="/testimonials"
             className={({ isActive }) =>
@@ -67,6 +160,7 @@ const Navbar: React.FC = () => {
           >
             Testimonials
           </NavLink>
+
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -75,6 +169,7 @@ const Navbar: React.FC = () => {
           >
             About
           </NavLink>
+
           <NavLink
             to="/contact"
             className={({ isActive }) =>
@@ -87,7 +182,6 @@ const Navbar: React.FC = () => {
 
         {/* Icons + Call (desktop) */}
         <div className="hidden md:flex items-center gap-3">
-          {/* Maps icon */}
           <a
             href="https://maps.app.goo.gl/VVBcnLexZfENqs2c7"
             target="_blank"
@@ -116,7 +210,6 @@ const Navbar: React.FC = () => {
             </svg>
           </a>
 
-          {/* Instagram icon */}
           <a
             href="https://www.instagram.com/sk.infotech2/?igsh=MWx3YzkyM3NnMjM2#"
             target="_blank"
@@ -183,6 +276,8 @@ const Navbar: React.FC = () => {
               { to: "/", label: "Home" },
               { to: "/services", label: "Services" },
               { to: "/laptop-repair", label: "Laptop Repair" },
+              { to: "/desktop-repair", label: "Desktop Repair" },
+              { to: "/cctv-repair", label: "CCTV Services" },
               { to: "/testimonials", label: "Testimonials" },
               { to: "/about", label: "About" },
               { to: "/contact", label: "Contact" },
