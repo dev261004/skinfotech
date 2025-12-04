@@ -4,6 +4,7 @@ interface ServiceCardProps {
   title: string;
   icon: string;
   items: string[];
+    link?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, icon, items }) => (
