@@ -8,91 +8,66 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden border-b border-slate-800">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.20),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.25),_transparent_60%)]" />
-        <div className="relative max-w-6xl mx-auto px-4 py-10 md:py-16 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold text-emerald-300 mb-3">
-              HOME VISIT AVAILABLE
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-3">
-              Expert{" "}
-              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                Laptop, Desktop & CCTV
-              </span>{" "}
-              Repair in Vadodara
-            </h1>
-            <p className="text-slate-300 text-sm md:text-base mb-5 max-w-xl">
-              SK Infotech provides fast, reliable{" "}
-              <span className="font-medium text-slate-100">
-                Sales & Services
-              </span>{" "}
-              for laptops, desktops, networking, printers and CCTV systems.
-              Genuine parts, clear communication and doorstep service.
-            </p>
+     {/* HERO SECTION */}
+<section className="relative overflow-hidden border-b border-slate-800">
+  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.20),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.25),_transparent_60%)]" />
+  <div className="relative max-w-6xl mx-auto px-4 py-10 md:py-16 grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* LEFT — unchanged */}
+    <div>
+      <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold text-emerald-300 mb-3">
+        HOME VISIT AVAILABLE
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+      </span>
 
-            <div className="flex flex-wrap gap-3 mb-4">
-              <a
-                href={`tel:${phone}`}
-                className="rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-sm font-semibold px-6 py-2.5 transition"
-              >
-                📞 Call Now
-              </a>
-              <a
-                href={`https://wa.me/${whatsappNumber}`}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-emerald-400/70 text-emerald-300 text-sm font-semibold px-6 py-2.5 hover:bg-emerald-400/10 transition"
-              >
-                💬 WhatsApp Us
-              </a>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Mon–Sun · 8:00 AM – 11:30 PM · Quick response on WhatsApp.
-            </p>
-          </div>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-3">
+        Expert{" "}
+        <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+          Laptop, Desktop & CCTV
+        </span>{" "}
+        Repair in Vadodara
+      </h1>
 
-          <div className="bg-slate-900/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-[0_0_40px_rgba(8,47,73,0.7)]">
-            <h2 className="text-sm font-semibold text-slate-100 mb-3 flex items-center gap-2">
-              🛠 Same-Day Laptop Repair
-              <span className="text-[10px] text-emerald-300 font-normal">
-                (for many common issues)
-              </span>
-            </h2>
-            <div className="grid grid-cols-2 gap-3 text-xs text-slate-200">
-              <div>
-                <p className="font-semibold text-slate-100 mb-1">
-                  Common Issues
-                </p>
-                <ul className="space-y-1 text-slate-300">
-                  <li>• Not turning on / no display</li>
-                  <li>• Broken / flickering screen</li>
-                  <li>• Keyboard not working</li>
-                  <li>• Laptop overheating</li>
-                  <li>• Windows not starting</li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-semibold text-slate-100 mb-1">
-                  Instant Help
-                </p>
-                <ul className="space-y-1 text-slate-300">
-                  <li>• Free basic diagnosis</li>
-                  <li>• Home visit available</li>
-                  <li>• Genuine parts support</li>
-                  <li>• Warranty on repairs</li>
-                  <li>• Pickup & drop (optional)</li>
-                </ul>
-              </div>
-            </div>
-            <p className="mt-4 text-[11px] text-slate-400">
-              Share your device problem on WhatsApp and get a quick estimate
-              before we visit.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="text-slate-300 text-sm md:text-base mb-5 max-w-xl">
+        SK Infotech provides fast, reliable{" "}
+        <span className="font-medium text-slate-100">Sales & Services</span>{" "}
+        for laptops, desktops, networking, printers and CCTV systems.
+        Genuine parts, clear communication and doorstep service.
+      </p>
+
+      <div className="flex flex-wrap gap-3 mb-4">
+        <a
+          href={`tel:${phone}`}
+          className="rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-sm font-semibold px-6 py-2.5 transition"
+        >
+          📞 Call Now
+        </a>
+        <a
+          href={`https://wa.me/${whatsappNumber}`}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full border border-emerald-400/70 text-emerald-300 text-sm font-semibold px-6 py-2.5 hover:bg-emerald-400/10 transition"
+        >
+          💬 WhatsApp Us
+        </a>
+      </div>
+
+      <p className="text-[11px] text-slate-400">
+        Mon–Sun · 8:00 AM – 11:30 PM · Quick response on WhatsApp.
+      </p>
+    </div>
+
+    {/* RIGHT — NEW IMAGE (instead of Same-Day card) */}
+    <div className="flex justify-center md:justify-end">
+      <img
+        src="/home_img.jpeg"
+        alt="SK Infotech Services"
+        className="w-full max-w-md h-auto object-contain rounded-xl"
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* QUICK CONTACT SECTION ON HOME PAGE */}
       <section className="bg-slate-950 text-slate-50 border-b border-slate-800">
