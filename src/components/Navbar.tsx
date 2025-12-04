@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
                   }
                   onClick={() => setRepairOpen(false)}
                 >
-                  CCTV Services
+                  CCTV Repair
                 </NavLink>
               </div>
             )}
