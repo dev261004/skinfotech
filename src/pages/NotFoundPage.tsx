@@ -10,7 +10,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <section className="relative min-h-[70vh] border-b border-slate-800 bg-slate-950 overflow-hidden">
       {/* background glow */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.20),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.25),_transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.20),transparent_55%),radial-gradient(circle_at_bottom,rgba(59,130,246,0.25),transparent_60%)]" />
 
       <div className="relative max-w-6xl mx-auto px-4 py-14 md:py-20 flex flex-col items-center text-center gap-8">
         {/* Badge */}
@@ -23,7 +23,7 @@ const NotFoundPage: React.FC = () => {
         <div>
           <div className="text-6xl md:text-7xl font-extrabold tracking-tight mb-3">
             <span className="text-slate-700">4</span>
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
               0
             </span>
             <span className="text-slate-700">4</span>
