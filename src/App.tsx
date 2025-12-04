@@ -7,8 +7,8 @@ import LaptopRepairPage from "./pages/LaptopRepairPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
-import DesktopRepairPage from "@/pages/DesktopRepairPage";
-import CctvRepairPage from "@/pages/CctvRepairPage";
+import DesktopRepairPage from "./pages/DesktopRepairPage";
+import CctvRepairPage from "./pages/CctvRepairPage";
 
 
 
